@@ -1,0 +1,12 @@
+{
+  "tables": [
+    { "name": "dim_currency", "sql_file": "sql/gold/dim_currency.sql", "depends_on": [] },
+    { "name": "dim_date", "sql_file": "sql/gold/dim_date.sql", "depends_on": [] },
+    { "name": "dim_sales_territory", "sql_file": "sql/gold/dim_sales_territory.sql", "depends_on": [] },
+    { "name": "dim_geography", "sql_file": "sql/gold/dim_geography.sql", "depends_on": ["dim_sales_territory"] },
+    { "name": "dim_customer", "sql_file": "sql/gold/dim_customer.sql", "depends_on": ["dim_geography"] },
+    { "name": "dim_product", "sql_file": "sql/gold/dim_product.sql", "depends_on": [] },
+    { "name": "dim_promotion", "sql_file": "sql/gold/dim_promotion.sql", "depends_on": [] },
+    { "name": "fact_internet_sales", "sql_file": "sql/gold/fact_internet_sales.sql", "depends_on": ["dim_currency", "dim_customer", "dim_product", "dim_promotion", "dim_sales_territory"] }
+  ]
+}

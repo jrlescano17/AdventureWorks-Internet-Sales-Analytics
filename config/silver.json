@@ -1,0 +1,24 @@
+{
+  "tables": [
+    { "name": "person_address", "sql_file": "sql/silver/person_address.sql", "depends_on": [] },
+    { "name": "person_business_entity_address", "sql_file": "sql/silver/person_business_entity_address.sql", "depends_on": [] },
+    { "name": "person_country_region", "sql_file": "sql/silver/person_country_region.sql", "depends_on": [] },
+    { "name": "person_demographics", "sql_file": "sql/silver/person_demographics.sql", "depends_on": [] },
+    { "name": "person_email_address", "sql_file": "sql/silver/person_email_address.sql", "depends_on": [] },
+    { "name": "person_person", "sql_file": "sql/silver/person_person.sql", "depends_on": [] },
+    { "name": "person_phone", "sql_file": "sql/silver/person_phone.sql", "depends_on": [] },
+    { "name": "person_state_province", "sql_file": "sql/silver/person_state_province.sql", "depends_on": [] },
+    { "name": "production_product", "sql_file": "sql/silver/production_product.sql", "depends_on": [] },
+    { "name": "production_product_and_description", "sql_file": "sql/silver/production_product_and_description.sql", "depends_on": [] },
+    { "name": "production_product_cost_history", "sql_file": "sql/silver/production_product_cost_history.sql", "depends_on": [] },
+    { "name": "production_product_subcategory", "sql_file": "sql/silver/production_product_subcategory.sql", "depends_on": [] },
+    { "name": "product_category", "sql_file": "sql/silver/product_category.sql", "depends_on": [] },
+    { "name": "sales_currency", "sql_file": "sql/silver/sales_currency.sql", "depends_on": [] },
+    { "name": "sales_currency_rate", "sql_file": "sql/silver/sales_currency_rate.sql", "depends_on": [] },
+    { "name": "sales_customer", "sql_file": "sql/silver/sales_customer.sql", "depends_on": [] },
+    { "name": "sales_order_detail", "sql_file": "sql/silver/sales_order_detail.sql", "depends_on": [] },
+    { "name": "sales_order_header", "sql_file": "sql/silver/sales_order_header.sql", "depends_on": [] },
+    { "name": "sales_special_offer", "sql_file": "sql/silver/sales_special_offer.sql", "depends_on": [] },
+    { "name": "sales_territory", "sql_file": "sql/silver/sales_territory.sql", "depends_on": [] }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "tables": [
+    { "name": "PersonAddress", "source": "data/raw/PersonAddress.csv", "target": "data/bronze/PersonAddress.parquet", "depends_on": [] },
+    { "name": "PersonBusinessEntityAddress", "source": "data/raw/PersonBusinessEntityAddress.csv", "target": "data/bronze/PersonBusinessEntityAddress.parquet", "depends_on": [] },
+    { "name": "PersonCountryRegion", "source": "data/raw/PersonCountryRegion.csv", "target": "data/bronze/PersonCountryRegion.parquet", "depends_on": [] },
+    { "name": "PersonEmailAddress", "source": "data/raw/PersonEmailAddress.csv", "target": "data/bronze/PersonEmailAddress.parquet", "depends_on": [] },
+    { "name": "PersonPerson", "source": "data/raw/PersonPerson.csv", "target": "data/bronze/PersonPerson.parquet", "depends_on": [] },
+    { "name": "PersonPersonPhone", "source": "data/raw/PersonPersonPhone.csv", "target": "data/bronze/PersonPersonPhone.parquet", "depends_on": [] },
+    { "name": "PersonStateProvince", "source": "data/raw/PersonStateProvince.csv", "target": "data/bronze/PersonStateProvince.parquet", "depends_on": [] },
+    { "name": "ProductionProduct", "source": "data/raw/ProductionProduct.csv", "target": "data/bronze/ProductionProduct.parquet", "depends_on": [] },
+    { "name": "ProductionProductCategory", "source": "data/raw/ProductionProductCategory.csv", "target": "data/bronze/ProductionProductCategory.parquet", "depends_on": [] },
+    { "name": "ProductionProductCostHistory", "source": "data/raw/ProductionProductCostHistory.csv", "target": "data/bronze/ProductionProductCostHistory.parquet", "depends_on": [] },
+    { "name": "ProductionProductSubcategory", "source": "data/raw/ProductionProductSubcategory.csv", "target": "data/bronze/ProductionProductSubcategory.parquet", "depends_on": [] },
+    { "name": "ProductionvProductAndDescription", "source": "data/raw/ProductionvProductAndDescription.csv", "target": "data/bronze/ProductionvProductAndDescription.parquet", "depends_on": [] },
+    { "name": "SalesCurrency", "source": "data/raw/SalesCurrency.csv", "target": "data/bronze/SalesCurrency.parquet", "depends_on": [] },
+    { "name": "SalesCurrencyRate", "source": "data/raw/SalesCurrencyRate.csv", "target": "data/bronze/SalesCurrencyRate.parquet", "depends_on": [] },
+    { "name": "SalesCustomer", "source": "data/raw/SalesCustomer.csv", "target": "data/bronze/SalesCustomer.parquet", "depends_on": [] },
+    { "name": "SalesSalesOrderDetail", "source": "data/raw/SalesSalesOrderDetail.csv", "target": "data/bronze/SalesSalesOrderDetail.parquet", "depends_on": [] },
+    { "name": "SalesSalesOrderHeader", "source": "data/raw/SalesSalesOrderHeader.csv", "target": "data/bronze/SalesSalesOrderHeader.parquet", "depends_on": [] },
+    { "name": "SalesSalesTerritory", "source": "data/raw/SalesSalesTerritory.csv", "target": "data/bronze/SalesSalesTerritory.parquet", "depends_on": [] },
+    { "name": "SalesSpecialOffer", "source": "data/raw/SalesSpecialOffer.csv", "target": "data/bronze/SalesSpecialOffer.parquet", "depends_on": [] },
+    { "name": "SalesvPersonDemographics", "source": "data/raw/SalesvPersonDemographics.csv", "target": "data/bronze/SalesvPersonDemographics.parquet", "depends_on": [] }
+  ]
+}
