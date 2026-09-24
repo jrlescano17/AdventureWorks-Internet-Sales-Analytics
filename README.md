@@ -144,7 +144,7 @@ Esto permite ejecutar cada etapa en el orden correcto según el grafo de depende
 ## Estructura del repositorio
 
 ```text
-adventureworks-medallion-analytics/
+AdventureWorks-Internet-Sales-Analytics/
 ├── pipeline.py
 ├── README.md
 ├── requirements.txt
