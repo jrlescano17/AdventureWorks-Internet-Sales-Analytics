@@ -3,6 +3,21 @@
     "not_null": ["customer_key", "customer_alternate_key", "customer_name"],
     "unique": [["customer_key"], ["customer_alternate_key"]]
   },
+  "dim_date": {
+    "not_null": ["date_key", "date"],
+    "unique": [["date_key"], ["date"]]
+  },
+  "dim_sales_territory": {
+    "not_null": ["territory_key", "territory_name"],
+    "unique": [["territory_key"]]
+  },
+  "dim_geography": {
+    "not_null": ["geography_key", "city", "state_province_name", "country_region_name", "sales_territory_key"],
+    "unique": [["geography_key"]],
+    "foreign_keys": [
+      {"fk_column": "sales_territory_key", "parent_table": "dim_sales_territory", "parent_column": "territory_key"}
+    ]
+  },
   "dim_product": {
     "not_null": ["product_key", "product_alternate_key", "product_name"],
     "unique": [["product_key"], ["product_alternate_key"]]
@@ -11,6 +26,10 @@
     "not_null": ["currency_key", "currency_alternate_key", "currency_name"],
     "unique": [["currency_key"], ["currency_alternate_key"]]
   },
+  "dim_promotion": {
+    "not_null": ["promotion_key", "promotion_name"],
+    "unique": [["promotion_key"]]
+  },
   "fact_internet_sales": {
     "not_null": [
       "sales_order_number",
@@ -18,8 +37,10 @@
       "customer_key",
       "product_key",
       "currency_key",
-      "territory_key"
+      "territory_key",
+      "promotion_key"
     ],
+    "unique": [["sales_order_number", "sales_order_line_number"]],
     "positive": [
       {"columns": ["order_quantity", "extended_amount", "sales_amount", "tax_amount", "freight"], "allow_zero": true}
     ],
@@ -27,7 +48,8 @@
       {"fk_column": "customer_key", "parent_table": "dim_customer", "parent_column": "customer_key"},
       {"fk_column": "product_key", "parent_table": "dim_product", "parent_column": "product_key"},
       {"fk_column": "currency_key", "parent_table": "dim_currency", "parent_column": "currency_key"},
-      {"fk_column": "territory_key", "parent_table": "dim_sales_territory", "parent_column": "territory_key"}
+      {"fk_column": "territory_key", "parent_table": "dim_sales_territory", "parent_column": "territory_key"},
+      {"fk_column": "promotion_key", "parent_table": "dim_promotion", "parent_column": "promotion_key"}
     ]
   }
 }
