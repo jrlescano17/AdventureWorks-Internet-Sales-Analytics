@@ -1,0 +1,24 @@
+{
+  "PersonPerson": { "required": ["BusinessEntityID", "FirstName", "LastName"], "critical": true },
+  "PersonAddress": { "required": ["AddressID", "AddressLine1", "City", "StateProvinceID", "PostalCode"], "critical": true },
+  "PersonBusinessEntityAddress": { "required": ["BusinessEntityID", "AddressID", "AddressTypeID"], "critical": false },
+  "PersonStateProvince": { "required": ["StateProvinceID", "StateProvinceCode", "CountryRegionCode", "Name"], "critical": true },
+  "PersonCountryRegion": { "required": ["CountryRegionCode", "Name"], "critical": true },
+  "PersonEmailAddress": { "required": ["BusinessEntityID", "EmailAddress"], "critical": false },
+  "PersonPersonPhone": { "required": ["BusinessEntityID", "PhoneNumber"], "critical": false },
+
+  "ProductionProduct": { "required": ["ProductID", "Name", "ProductNumber", "StandardCost", "ListPrice"], "critical": true },
+  "ProductionProductCategory": { "required": ["ProductCategoryID", "Name"], "critical": true },
+  "ProductionProductSubcategory": { "required": ["ProductSubcategoryID", "ProductCategoryID", "Name"], "critical": true },
+  "ProductionvProductAndDescription": { "required": ["ProductID", "Name", "Description", "CultureID"], "critical": false },
+  "ProductionProductCostHistory": { "required": ["ProductID", "StartDate", "StandardCost"], "critical": true },
+
+  "SalesSalesOrderHeader": { "required": ["SalesOrderID", "SalesOrderNumber", "OrderDate", "SubTotal", "CurrencyRateID"], "critical": true },
+  "SalesSalesOrderDetail": { "required": ["SalesOrderDetailID", "SalesOrderID", "ProductID", "LineTotal", "OrderQty"], "critical": true },
+  "SalesCustomer": { "required": ["CustomerID", "PersonID", "AccountNumber"], "critical": true },
+  "SalesCurrencyRate": { "required": ["CurrencyRateID", "ToCurrencyCode", "AverageRate", "CurrencyRateDate"], "critical": true },
+  "SalesCurrency": { "required": ["CurrencyCode", "Name"], "critical": false },
+  "SalesSalesTerritory": { "required": ["TerritoryID", "Name", "CountryRegionCode"], "critical": true },
+  "SalesSpecialOffer": { "required": ["SpecialOfferID", "Description", "DiscountPct"], "critical": false },
+  "SalesvPersonDemographics": { "required": ["BusinessEntityID", "BirthDate", "MaritalStatus", "YearlyIncome", "Gender", "TotalChildren", "NumberChildrenAtHome", "Education", "Occupation", "HomeOwnerFlag", "NumberCarsOwned"], "critical": true }
+}

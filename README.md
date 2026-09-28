@@ -1,4 +1,4 @@
-# AdventureWorks Medallion Analytics
+# AdventureWorks Internet Sales Analytics
 
 Este proyecto nace de la necesidad de analizar el desempeño de las ventas por internet de AdventureWorks. El objetivo de negocio es responder preguntas como: ¿cuánto se vende por periodo?, ¿qué productos y clientes generan mayor valor?, ¿cómo se comportan las ventas por territorio, promoción y moneda?, y ¿qué indicadores permiten evaluar el rendimiento del canal online?
 
@@ -144,7 +144,7 @@ Esto permite ejecutar cada etapa en el orden correcto según el grafo de depende
 ## Estructura del repositorio
 
 ```text
-adventureworks-medallion-analytics/
+AdventureWorks-Internet-Sales-Analytics/
 ├── pipeline.py
 ├── README.md
 ├── requirements.txt

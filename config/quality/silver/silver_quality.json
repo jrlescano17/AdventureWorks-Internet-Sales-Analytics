@@ -1,0 +1,39 @@
+{
+  "sales_order_header": {
+    "not_null": ["sales_order_id", "sales_order_number", "order_date", "customer_id"],
+    "unique": [["sales_order_id"]],
+    "positive": [
+      {"columns": ["sub_total", "tax_amount", "freight", "total_due"], "allow_zero": true}
+    ],
+    "date_order": [{"start": "order_date", "end": "ship_date"}]
+  },
+  "sales_order_detail": {
+    "not_null": ["sales_order_id", "sales_order_detail_id", "product_id", "order_quantity"],
+    "unique": [["sales_order_detail_id"]],
+    "positive": [
+      {"columns": ["order_quantity"], "allow_zero": false},
+      {"columns": ["unit_price", "line_total"], "allow_zero": true}
+    ],
+    "foreign_keys": [
+      {"fk_column": "sales_order_id", "parent_table": "sales_order_header", "parent_column": "sales_order_id"},
+      {"fk_column": "product_id", "parent_table": "production_product", "parent_column": "product_id"}
+    ]
+  },
+  "sales_customer": {
+    "not_null": ["customer_id", "account_number"],
+    "unique": [["customer_id"]],
+    "foreign_keys": [
+      {"fk_column": "person_id", "parent_table": "person_person", "parent_column": "business_entity_id"}
+    ]
+  },
+  "production_product": {
+    "not_null": ["product_id", "product_name", "product_number"],
+    "unique": [["product_id"]],
+    "positive": [
+      {"columns": ["standard_cost", "list_price"], "allow_zero": true}
+    ],
+    "foreign_keys": [
+      {"fk_column": "product_subcategory_id", "parent_table": "production_product_subcategory", "parent_column": "product_subcategory_id"}
+    ]
+  }
+}

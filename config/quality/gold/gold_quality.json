@@ -1,0 +1,33 @@
+{
+  "dim_customer": {
+    "not_null": ["customer_key", "customer_alternate_key", "customer_name"],
+    "unique": [["customer_key"], ["customer_alternate_key"]]
+  },
+  "dim_product": {
+    "not_null": ["product_key", "product_alternate_key", "product_name"],
+    "unique": [["product_key"], ["product_alternate_key"]]
+  },
+  "dim_currency": {
+    "not_null": ["currency_key", "currency_alternate_key", "currency_name"],
+    "unique": [["currency_key"], ["currency_alternate_key"]]
+  },
+  "fact_internet_sales": {
+    "not_null": [
+      "sales_order_number",
+      "sales_order_line_number",
+      "customer_key",
+      "product_key",
+      "currency_key",
+      "territory_key"
+    ],
+    "positive": [
+      {"columns": ["order_quantity", "extended_amount", "sales_amount", "tax_amount", "freight"], "allow_zero": true}
+    ],
+    "foreign_keys": [
+      {"fk_column": "customer_key", "parent_table": "dim_customer", "parent_column": "customer_key"},
+      {"fk_column": "product_key", "parent_table": "dim_product", "parent_column": "product_key"},
+      {"fk_column": "currency_key", "parent_table": "dim_currency", "parent_column": "currency_key"},
+      {"fk_column": "territory_key", "parent_table": "dim_sales_territory", "parent_column": "territory_key"}
+    ]
+  }
+}

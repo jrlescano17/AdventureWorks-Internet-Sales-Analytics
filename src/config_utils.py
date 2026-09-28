@@ -12,7 +12,7 @@ def load_layer_config(layer_name: str):
     dependency relationships between them. The returned list is used by the
     ingestion, transformation, and loading stages to build the execution plan.
     """
-    config_path = BASE_DIR / "config" / f"{layer_name}.json"
+    config_path = BASE_DIR / "config" / "pipeline" / f"{layer_name}.json"
 
     with config_path.open("r", encoding="utf-8") as handle:
         payload = json.load(handle)
