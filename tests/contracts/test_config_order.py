@@ -3,7 +3,7 @@ from pathlib import Path
 
 from src.config_utils import load_layer_config, resolve_execution_order
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_gold_execution_order_respects_dependencies():
